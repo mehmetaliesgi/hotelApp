@@ -1,1 +1,68 @@
-Deneme
+<div class="container">
+<div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Rooms</h1>
+                    
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">All Of Rooms</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Number</th>
+                                            <th>Capacity</th>
+                                            <th>Price</th>
+                                            <th>Description</th>
+                                            <th>Photos</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Number</th>
+                                            <th>Capacity</th>
+                                            <th>Price</th>
+                                            <th>Description</th>
+                                            <th>Photos</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    
+                                    <% @rooms.each do |room| %>
+                                        <tr>
+                                            <td><%= room.number %></td>
+                                            <td><%= room.capacity %></td>
+                                            <td><%= room.price %></td>
+                                            <td><%= room.description %></td>
+                                            <td>Photos</td>
+                                            <td><%= room.status %></td>
+                                        </tr>
+                                    <% end %>
+                                         
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
+</div>
