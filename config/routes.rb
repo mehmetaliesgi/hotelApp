@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   root "admin#index"
 
   get 'room', to: 'admin#room'
+  get 'room/new', to: 'admin#add_room'
+  post 'room/new', to: 'admin#create_room'
 end
