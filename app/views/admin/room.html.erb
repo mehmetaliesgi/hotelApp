@@ -50,6 +50,7 @@
                                                 <td>
                                             
                                                     <% room.photos.each do |photo| %>
+                                                      <% if photo.content_type.in?(%w[image/jpeg image/png])
                                                         <%= link_to image_tag(room.photo_as_thumbnail(photo)), photo %>
                                                     <% end %>
                                             
