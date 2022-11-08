@@ -104,155 +104,30 @@
                                 <h1 class="h3 mb-0 text-gray-800">Odalar</h1>
                             </div>
                             <!-- Color System -->
-                            <div class="row">
-                                <div class="col-lg-2 mb-4">
+                            <div class="row">      
+                              <% @rooms.each do |room| %>
+                                <% if room.status == 'Available' %>
+                                  <div class="col-lg-2 mb-4">
                                     <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Oda 1
-                                            <div class="text-white-50 small"></div>
+                                        <div class="card-body">       
+                                            <div class="text-white large">                                                
+                                                   Oda <%=room.number  %>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
+                                  </div>
+                                <% else %>
+                                    <div class="col-lg-2 mb-4">
                                     <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Oda 2
-                                            <div class="text-white-50 small"></div>
+                                        <div class="card-body">       
+                                            <div class="text-white large">                                                
+                                                   Oda <%=room.number  %>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Oda 3
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Oda 4
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Oda 5
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Oda 6
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Oda 7
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Oda 8
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Oda 9
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Oda 10
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Oda 11
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Oda 12
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Oda 13
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Oda 14
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Oda 15
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Oda 16
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Oda 17
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Oda 18
-                                            <div class="text-white-50 small"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                                  </div>
+                                <% end %>  
+                              <% end %>
                                 
                             </div>
 
