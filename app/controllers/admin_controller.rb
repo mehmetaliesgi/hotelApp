@@ -18,8 +18,29 @@ class AdminController < ApplicationController
     if @room.save
       redirect_to root_path
     else
-      render :index
+      render :create_room
     end
+  end
+
+  def room_edit
+    @room = Room.find(params[:id])
+  end
+
+  def room_update
+    @room = Room.find(params[:id])
+    
+    if @room.update(room_params)
+      redirect_to root_path
+    else
+      render :room_edit
+    end
+  end
+
+  def room_destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+
+    redirect_to room_path
   end
 
   private
