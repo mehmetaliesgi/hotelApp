@@ -6,17 +6,17 @@
             <div class="container-fluid">
                 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Rooms</h1>                
+                <h1 class="h3 mb-2 text-gray-800">Services</h1>                
                     
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                           <div class="row container">
                             <div class="col-md-6" style="margin: auto;">
-                                <h6 class="m-0 font-weight-bold text-primary">All Of Rooms</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">All Of Services</h6>
                             </div>
                             <div class="col-md-6">
-                                <%= button_to "Ekle", room_new_path, method: :get, class: "btn btn-primary float-right" %>                          
+                                <%= button_to "Ekle", service_new_path, method: :get, class: "btn btn-primary float-right" %>                          
                             </div>  
                           </div>
                         </div>
@@ -34,25 +34,17 @@
 
                                     <tbody>
                                     
-                                        <% @rooms.each do |room| %>
+                                        <% @services.each do |service| %>
                                             <tr>
-                                                <td><%= room.number %></td>
-                                                <td><%= room.capacity %></td>
-                                                <td><%= room.price %></td>
-                                                <td><%= room.description %></td>
-                                                <td>                                           
-                                                    <% room.photos.each do |photo| %>
-                                                      <% if photo.content_type.in?(%w[image/jpeg image/png]) %>
-                                                        <%= link_to image_tag(room.photo_as_thumbnail(photo)), photo %>
-                                                      <% end %>
-                                                    <% end %>
-                                                </td>
-                                                <td><%= room.status %></td>
+                                                <td><%= service.name %></td>
+                                                <td><%= service.description %></td>
+                                                <td><%= service.icon %></td>
+                                                
                                                 <td>
-                                                    <%= button_to "Düzenle", edit_room_path(room.id), method: :get, class: "btn btn-info float-right" %> 
+                                                    <%= button_to "Düzenle", edit_service_path(service.id), method: :get, class: "btn btn-info float-right" %> 
                                                 </td>
                                                 <td>
-                                                    <%= button_to "Sil", delete_room_path(room.id), method: :delete, class: "btn btn-danger float-right" %>
+                                                    <%= button_to "Sil", delete_service_path(service.id), method: :delete, class: "btn btn-danger float-right" %>
                                                 </td>
                                             </tr>
                                         <% end %>
