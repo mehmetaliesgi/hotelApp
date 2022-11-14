@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'services', to: 'services#index'
 
   get 'service/:id/edit', to: 'services#edit', as: :edit_service
-  patch 'room/:id', to: 'services#update'
+  patch 'service/:id', to: 'services#update'
 
   get 'service/new', to: 'services#new'
   post 'service/create', to: 'services#create'
