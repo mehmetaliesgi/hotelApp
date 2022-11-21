@@ -32,6 +32,8 @@
                                             <th>Description</th>
                                             <th>Photos</th>
                                             <th>Status</th>
+                                            <th>Services</th>
+                                            <th colspan="2">Actions</th>
                                         </tr>
                                     </thead>
 
@@ -42,7 +44,7 @@
                                                 <td><%= room.number %></td>
                                                 <td><%= room.capacity %></td>
                                                 <td><%= room.price %></td>
-                                                <td><%= room.description %></td>
+                                                <td><%= short_descripton(room.description)%></td>
                                                 <td>                                           
                                                     <% room.photos.each do |photo| %>
                                                       <% if photo.content_type.in?(%w[image/jpeg image/png]) %>
@@ -51,6 +53,10 @@
                                                     <% end %>
                                                 </td>
                                                 <td><%= room.status %></td>
+                                                <td><% room.services.pluck(:icon).each do |icon| %>
+                                                    <%= icon.html_safe %>  
+                                                    <% end %>
+                                                </td>
                                                 <td>
                                                     <%= button_to "Düzenle", edit_room_path(room.id), method: :get, class: "btn btn-info float-right" %> 
                                                 </td>

@@ -29,6 +29,7 @@
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th>Icon</th>
+                                            <th colspan="2">Actions</th>
                                         </tr>
                                     </thead>
 
@@ -38,7 +39,7 @@
                                             <tr>
                                                 <td><%= service.name %></td>
                                                 <td><%= service.description %></td>
-                                                <td><%= service.icon %></td>
+                                                <td><%= service.icon.html_safe %></td>
                                                 
                                                 <td>
                                                     <%= button_to "Düzenle", edit_service_path(service.id), method: :get, class: "btn btn-info float-right" %> 

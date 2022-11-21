@@ -37,6 +37,13 @@
                                   <%= form.text_field :description, placeholder: 'Bu oda 2 kişiliktir. Televizyon ....', class: "form-control" %> <br>
                                   <%= form.label "Oda Durumu", class: "form-check-label" %>
                                   <%= form.text_field :status, placeholder: 'Lütfen sadece 0 veya 1 değerlerini giriniz. (0 = Müsait, 1 = Müsait değil.)', class: "form-control" %> <br>
+                                  <div>
+                                    <%= hidden_field_tag "room[service_ids][]", nil %> 
+                                    <% Service.all.each do |service| %>
+                                      <%= check_box_tag "room[service_ids][]", service.id, @room.service_ids.include?(service.id), id: dom_id(service) %>
+                                      <%= label_tag dom_id(service), service.name %>
+                                    <% end %>
+                                  </div>
                                   <%= form.label "Fotoğraflar", class: "form-check-label" %> <br>
                                   <div class="custom-file">
                                     <%= form.file_field :photos, multiple: true %> <br>

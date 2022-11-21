@@ -27,6 +27,8 @@ class AdminController < ApplicationController
   end
 
   def room_update
+    params["room"].delete("photos") if params["room"]["photos"] == [""]
+  
     @room = Room.find(params[:id])
     
     if @room.update(room_params)
@@ -46,7 +48,7 @@ class AdminController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:number, :capacity, :price, :description, :status, photos: [])
+    params.require(:room).permit(:number, :capacity, :price, :description, :status, photos: [], service_ids: [])
   end
 
 end
