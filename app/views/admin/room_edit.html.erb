@@ -35,8 +35,8 @@
                                   <%= form.text_field :price, placeholder: '599', class: "form-control" %> <br>
                                   <%= form.label "Oda Açıklaması", class: "form-check-label" %>
                                   <%= form.text_field :description, placeholder: 'Bu oda 2 kişiliktir. Televizyon ....', class: "form-control" %> <br>
-                                  <%= form.label "Oda Durumu", class: "form-check-label" %>
-                                  <%= form.text_field :status, placeholder: 'Lütfen sadece 0 veya 1 değerlerini giriniz. (0 = Müsait, 1 = Müsait değil.)', class: "form-control" %> <br>
+                                  <%= form.label "Oda Durumu", class: "form-check-label" %> <br>
+                                  <%= form.select :status, options_for_select([['Oda Boş', 'Müsait'], ['Oda Dolu', 'Bakımda']], @room.status) %> <br> <br>
                                   <div>
                                     <%= hidden_field_tag "room[service_ids][]", nil %> 
                                     <% Service.all.each do |service| %>

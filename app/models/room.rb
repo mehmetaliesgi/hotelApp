@@ -3,7 +3,7 @@ class Room < ApplicationRecord
   has_many :service_rooms
   has_many :services, through: :service_rooms
 
-  enum :status, Available: 0, Maintance: 1
+  enum :status, Müsait: 0, Bakımda: 1
 
   validates :capacity, :number, numericality: true
   validates :price, presence: true, numericality: {:greater_than => 0}   
