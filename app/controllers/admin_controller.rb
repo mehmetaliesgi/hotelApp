@@ -18,7 +18,7 @@ class AdminController < ApplicationController
     if @room.save
       redirect_to root_path
     else
-      render :create_room
+      render :add_room
     end
   end
 

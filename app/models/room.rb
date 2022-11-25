@@ -8,9 +8,23 @@ class Room < ApplicationRecord
   validates :capacity, :number, numericality: true
   validates :price, presence: true, numericality: {:greater_than => 0}   
   validates :number, uniqueness: true
+  validate :image_type
 
   def photo_as_thumbnail(photo)
     return unless photo.content_type.in?(%w[image/jpeg image/png])
     photo.variant(resize_to_limit: [60, 30]).processed
   end
+
+  private
+  def image_type
+    if photos.attached? == false
+      errors.add(:images, "Fotoğraf Eklemelisiniz!")
+    end
+    photos.each do |photo|
+      if !photo.content_type.in?(%('image/jpeg image/png'))
+        errors.add(:images, "Seçtiğiniz dosya türü JPEG veya PNG olmalıdır.")
+      end
+    end
+  end
+  
 end
