@@ -15,17 +15,7 @@
                           <div class="row container">
                             <div class="col-md-6" style="margin: auto;">
                                 <h6 class="m-0 font-weight-bold text-primary">Oda Bilgileri</h6>
-                                
-                                  <% if @room.errors.any? %>
-                                    <ul>
-                                      <% @room.errors.full_messages.each do |message| %>
-                                        <div class="alert alert-danger">
-                                          <li><%= message %></li>
-                                        </div> 
-                                      <% end %>
-                                    </ul>
-                                  <% end %>
-                                
+                                  <%= render 'layouts/errors' %>
                             </div>
                             <div class="col-md-6">
                                 <%= button_to "Geri", room_path, method: :get, class: "btn btn-danger float-right" %>        

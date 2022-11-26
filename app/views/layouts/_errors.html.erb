@@ -1,0 +1,9 @@
+<% if @room.errors.any? %>
+  <ul>
+    <% @room.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <li><%= message %></li>
+      </div> 
+    <% end %>
+  </ul>
+<% end %>

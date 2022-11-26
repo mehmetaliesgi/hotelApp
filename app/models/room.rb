@@ -11,7 +11,6 @@ class Room < ApplicationRecord
   validate :image_type
 
   def photo_as_thumbnail(photo)
-    return unless photo.content_type.in?(%w[image/jpeg image/png])
     photo.variant(resize_to_limit: [60, 30]).processed
   end
 
