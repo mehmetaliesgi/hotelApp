@@ -1,6 +1,6 @@
 class Room < ApplicationRecord
   has_many_attached :photos
-  has_many :service_rooms
+  has_many :service_rooms, dependent: :destroy
   has_many :services, through: :service_rooms
 
   enum :status, Müsait: 0, Bakımda: 1
@@ -17,11 +17,11 @@ class Room < ApplicationRecord
   private
   def image_type
     if photos.attached? == false
-      errors.add(:images, "Fotoğraf Eklemelisiniz!")
+      errors.add(:photos, "Fotoğraf Eklemelisiniz!")
     end
     photos.each do |photo|
       if !photo.content_type.in?(%('image/jpeg image/png'))
-        errors.add(:images, "Seçtiğiniz dosya türü JPEG veya PNG olmalıdır.")
+        errors.add(:photos, "Seçtiğiniz dosya türü JPEG veya PNG olmalıdır.")
       end
     end
   end

@@ -1,0 +1,30 @@
+<%= form_for(@room, html: {'data-turbo' => "false"}) do |form| %>
+    <div class="container">
+      <%= form.label "Oda Numarası", class: "form-check-label" %>
+      <%= form.number_field :number, placeholder: '42', class: "form-control", pattern: "[0-9.]+" %> <br>
+      <%= form.label "Oda Kapasitesi", class: "form-check-label" %>
+      <%= form.number_field :capacity, placeholder: '2', class: "form-control" %> <br>
+      <%= form.label "Oda Fiyatı", class: "form-check-label" %>
+      <%= form.text_field :price, placeholder: '599', class: "form-control" %> <br>
+      <%= form.label "Oda Açıklaması", class: "form-check-label" %>
+      <%= form.text_field :description, placeholder: 'Bu oda 2 kişiliktir. Televizyon ....', class: "form-control" %> <br>
+      <%= form.label "Oda Durumu", class: "form-check-label" %> <br>
+      <%= form.select :status, options_for_select([['Oda Boş', 'Müsait'], ['Oda Dolu', 'Bakımda']]) %>
+      <br><br>
+      <div>
+      <%= form.collection_check_boxes :service_ids, Service.all, :id, :name do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+      </div>
+      <br>
+      <%= form.label "Fotoğraflar", class: "form-check-label" %> <br>
+      <div class="custom-file">
+        <%= form.file_field :photos, multiple: true %> <br>
+      </div>
+      <br> <br>
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
