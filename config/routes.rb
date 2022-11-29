@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  #rooms routes
+  
   root "admin#index"
-
+  #rooms routes
   resources :rooms
-
+  #users routes
+  resources :users
   #service routes
   resources :services
   
