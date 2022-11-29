@@ -1,2 +1,71 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="container">
+    <div id="content-wrapper" class="d-flex flex-column">
+        
+        <!-- Main Content -->
+        <div id="content">
+            <div class="container-fluid">
+                
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Services</h1>                
+                    
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                          <div class="row container">
+                            <div class="col-md-6" style="margin: auto;">
+                                <h6 class="m-0 font-weight-bold text-primary">All Of Services</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <%= button_to "Ekle", new_user_path, method: :get, class: "btn btn-primary float-right" %>                          
+                            </div>  
+                          </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>T.C.</th>
+                                            <th>Ad</th>
+                                            <th>Soyad</th>
+                                            <th>Email</th>
+                                            <th>Telefon No</th>
+                                            <th colspan="2">Actions</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    
+                                        <% @users.each do |user| %>
+                                            <tr>
+                                                <td><%= user.tckn %></td>
+                                                <td><%= user.name %></td>
+                                                <td><%= user.surname %></td>
+                                                <td><%= user.email %></td>
+                                                <td><%= user.telefon %></td>
+                                                
+                                                <td>
+                                                    <%= button_to "Düzenle", edit_user_path(user.id), method: :get, class: "btn btn-info float-right" %> 
+                                                </td>
+                                                <td>
+                                                    <%= button_to "Sil", user_path(user.id), method: :delete, class: "btn btn-danger float-right" %>
+                                                </td>
+                                            </tr>
+                                        <% end %>
+                                            
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+    </div>
+</div>

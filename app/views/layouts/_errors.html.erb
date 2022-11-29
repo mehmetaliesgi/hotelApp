@@ -1,9 +1,9 @@
 <% if @room.errors.any? %>
+<div class="alert alert-danger">
   <ul>
-    <% @room.errors.full_messages.each do |message| %>
-      <div class="alert alert-danger">
+    <% @room.errors.full_messages.each do |message| %>    
         <li><%= message %></li>
-      </div> 
     <% end %>
   </ul>
+</div> 
 <% end %>

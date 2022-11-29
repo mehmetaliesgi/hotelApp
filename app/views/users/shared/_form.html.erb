@@ -1,0 +1,18 @@
+<%= form_for(@user, html: {'data-turbo' => "false"}) do |form| %>
+    <div class="container">
+      <%= form.label "Müşteri TC No", class: "form-check-label" %>
+      <%= form.text_field :tckn, placeholder: 'Müşteri T.C. No Giriniz', class: "form-control" %> <br>
+      <%= form.label "Müşteri Adı", class: "form-check-label" %>
+      <%= form.text_field :name, placeholder: 'Müşteri Adını Giriniz', class: "form-control" %> <br>
+      <%= form.label "Müşteri Soyadı", class: "form-check-label" %>
+      <%= form.text_field :surname, placeholder: 'Müşteri Soyadını Buraya Yazınız', class: "form-control" %> <br>
+      <%= form.label "E-mail", class: "form-check-label" %>
+      <%= form.text_field :email, placeholder: 'example@example.com', class: "form-control" %> <br>
+      <%= form.label "Telefon", class: "form-check-label" %>
+      <%= form.text_field :telefon, placeholder: 'Cep Telefonu', class: "form-control" %> <br>
+      <%= form.label "Telefon 2 (Boş Bırakılabilir)", class: "form-check-label" %>
+      <%= form.text_field :telefon2, placeholder: 'Cep Telefonu 2', class: "form-control" %> <br>
+      <br>
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>

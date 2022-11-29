@@ -3,4 +3,5 @@ class User < ApplicationRecord
     validates :email, :tckn, uniqueness: true
     validates :name, :surname, :email, length: { minimum: 2, maximum: 50}
     validates :tckn, :telefon, :telefon2, numericality: { only_integer: true }
+    validates :tckn, length: { is: 11 }
 end

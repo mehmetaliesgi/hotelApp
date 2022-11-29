@@ -54,6 +54,19 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Users
+            </div>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+            <%= link_to(users_path, class: "nav-link") do %>
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Kullanıcılar</span></a>
+                <% end %>
+            </li>
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>

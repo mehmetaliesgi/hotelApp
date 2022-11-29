@@ -1,0 +1,12 @@
+<%= form_for @service, html: {'data-turbo' => "false"} do |form| %>
+  <div class="container">
+    <%= form.label "Servis Adı", class: "form-check-label" %>
+    <%= form.text_field :name, placeholder: 'Servis Adını Giriniz', class: "form-control" %> <br>
+    <%= form.label "Servis Açıklaması", class: "form-check-label" %>
+    <%= form.text_field :description, placeholder: 'Servis özelliklerini buraya yazınız', class: "form-control" %> <br>
+    <%= form.label "Servis Icon", class: "form-check-label" %>
+    <%= form.text_field :icon, placeholder: 'Icon link', class: "form-control" %> <br>
+    <br>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
