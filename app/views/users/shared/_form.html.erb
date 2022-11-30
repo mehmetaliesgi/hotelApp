@@ -12,6 +12,9 @@
       <%= form.text_field :telefon, placeholder: 'Cep Telefonu', class: "form-control" %> <br>
       <%= form.label "Telefon 2 (Boş Bırakılabilir)", class: "form-check-label" %>
       <%= form.text_field :telefon2, placeholder: 'Cep Telefonu 2', class: "form-control" %> <br>
+      <%= form.label "Kullanıcı Rol", class: "form-check-label" %> <br>
+      <%= form.select :role, options_for_select([['Müşteri', 'Müşteri'], ['Admin', 'Admin'], ['Super Admin', 'SuperAdmin']]) %><br>
+
       <br>
       <%= form.submit class: "btn btn-primary" %>
     </div>

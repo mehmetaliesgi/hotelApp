@@ -1,2 +1,35 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Kullanıcı Düzenle</h1>
+                    
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                          <div class="row container">
+                            <div class="col-md-6" style="margin: auto;">
+                                <h6 class="m-0 font-weight-bold text-primary">Kullanıcı Bilgileri</h6>
+                                <%= render 'users/shared/errors' %>    
+                            </div>
+                            <div class="col-md-6">
+                                <%= button_to "Geri", users_path, method: :get, class: "btn btn-danger float-right" %>        
+                            </div>  
+                          </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                              <%= render 'users/shared/form' %>
+                            </div>
+                        </div>
+                    </div>
+
+    
+  </div>
+</div>

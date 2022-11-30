@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.bigint :tckn
       t.bigint :telefon
       t.bigint :telefon2
-      t.integer :role
+      t.integer :role, default: 0
 
       t.timestamps
     end
