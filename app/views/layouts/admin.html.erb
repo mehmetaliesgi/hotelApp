@@ -26,6 +26,7 @@
 
   <body id="page-top">
 
+  <% if current_user.superadmin? %>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -97,6 +98,10 @@
     <!-- Page level custom scripts -->
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/demo/chart-pie-demo.js"></script>
+    <% else %>
+    <%= p "Bu Sayfaya Giriş Yetkiniz Bulunmamakatarıdır. Lütfen giriş sayfasına dönemek için aşağıdaki butonu tıklayınız." %> <br />
+    <%= button_to "Geri", destroy_user_session_path, method: :delete, class: "btn btn-warning" %>
+    <% end %>
 
   </body>
   
