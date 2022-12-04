@@ -1,13 +1,8 @@
 class AdminController < ApplicationController
-    layout "admin"
+  layout "admin"
 
-    def index
-
-    end
-    
-    def room
-        @rooms = Room.all
-    end
-
+  def index
+    @rooms = Room.all
+  end
 
 end

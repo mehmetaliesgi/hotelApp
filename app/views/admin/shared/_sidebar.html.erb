@@ -1,21 +1,22 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<%= root_path %>">
+            <%= link_to(root_path, class: "sidebar-brand d-flex align-items-center justify-content-center") do %>
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">My Hotel <sup>1</sup></div>
-            </a>
+            <% end %>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<%= root_path %>">
+                <%= link_to(root_path, class: "nav-link") do %>
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Ana Sayfa</span></a>
+                <% end %>
             </li>
 
             <!-- Divider -->
@@ -28,7 +29,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <%= link_to(room_path, class: "nav-link") do %>
+                <%= link_to(rooms_path, class: "nav-link") do %>
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Oda İşlemleri</span></a>
                 <% end %>
@@ -44,9 +45,10 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+            <%= link_to(services_path, class: "nav-link") do %>
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Servisler</span></a>
+                <% end %>
             </li>
 
             <!-- Divider -->
