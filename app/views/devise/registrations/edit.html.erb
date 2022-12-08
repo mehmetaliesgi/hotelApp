@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>SB Admin 2 - Edit</title>
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,15 +34,15 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit Account!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Hesap Düzenle!</h1>
                             </div>
                             <%= render 'devise/shared/form' %>
                             <hr>
                             <div class="text-center">
-                                <h3 class="h4 text-gray-900 mb-4">Cancel my account</h3>
+                                <h3 class="h4 text-gray-900 mb-4">Hesabımı Sil</h3>
                             </div>
                             <div class="text-center">
-                                <p class="h4 text-gray-900 mb-4">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
+                                <p class="h4 text-gray-900 mb-4">Mutsuz musun? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
                             </div>
                             <%= link_to "Back", :back %>
                         </div>
