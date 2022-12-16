@@ -42,9 +42,9 @@
                                 <h3 class="h4 text-gray-900 mb-4">Hesabımı Sil</h3>
                             </div>
                             <div class="text-center">
-                                <p class="h4 text-gray-900 mb-4">Mutsuz musun? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
+                                <p class="h4 text-gray-900 mb-4">Mutsuz musun? <%= button_to "Hesabımı Sil", registration_path(resource_name), data: { confirm: "Are you sure?", turbo: :false }, method: :delete, class: 'btn btn-danger' %></p>
                             </div>
-                            <%= link_to "Back", :back %>
+                            <%= link_to "Geri", :back %>
                         </div>
                     </div>
                 </div>

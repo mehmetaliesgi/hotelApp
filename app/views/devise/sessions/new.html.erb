@@ -39,7 +39,8 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    <%= render 'devise/shared/alerts' %>
+                                        <h1 class="h4 text-gray-900 mb-4">Tekrar Hoşgeldiniz!</h1>
                                     </div>
                                     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                                         <div class="form-group">
@@ -67,10 +68,13 @@
                                     <% end %>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <%= link_to "Şifremi Unuttum!", new_user_password_path, class: "small" %>
                                     </div>
                                     <div class="text-center">
-                                        <%= link_to "Create an Account!", new_user_registration_path, class: "small" %>
+                                        <%= link_to "Yeni Hesap Oluştur!", new_user_registration_path, class: "small" %>
+                                    </div>
+                                    <div class="text-center">
+                                        <%= link_to "Onaylama Maili Ulaşmadı Mı?", new_user_confirmation_path, class: "small" %>
                                     </div>
                                 </div>
                             </div>

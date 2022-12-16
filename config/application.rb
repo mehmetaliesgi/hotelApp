@@ -22,5 +22,8 @@ module HotelApp
     config.i18n.available_locales = [:en, :es, :de, :tr]
     config.i18n.default_locale = :tr
     config.i18n.fallbacks = true
+
+    config.action_mailer.raise_delivery_errors = true
+
   end
 end
