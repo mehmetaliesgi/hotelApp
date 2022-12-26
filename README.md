@@ -40,3 +40,8 @@ Things you may want to cover:
 * empty? => Eğer objemiz içinde bir değer varsa obje.empty? ifadesi bize false döndürür. Eğer obje var ve içinde değer yoksa bu sefer sonuç true döner.
 * nil? => Obje var fakat objenin içinde her hangi bir değer tutacak bir alan bile yoksa bu sefer nil? true, bir değer var ve bu değer boş bile olsa nil? false olur.
 * present? => Bir nesne boş değilse obje.present? true, boşsa false değerini döndürür. Empty nin tam tersidir.
+
+* fly.io postgres database bağlanmak için 'flyctl postgres connect -a app-name-db' komutunu kullanabiliriz.
+* productiona çıktığımız bir uygulama için mailer yapılandırmasını unutmayalım. production.rb dosyasına  'config.action_mailer.default_url_options = { :host => "https://hotel-app.fly.* dev/" }' eklememiz yeterli olacaktır.
+* eğer fly.io kullanacaksan ve test ortamındaki hali hazırda bulunan Active Storage dosyalarınıda taşımak istiyorsan 'volumes' özelliğine bak.
+* .env dosyasındaki bir secret_key production ortamına tanımlanmamışsa API key gibi, bunu fly.io da 'flyctl secrets set SENDGRID_APIKEY=APIKEY_DEĞERİ' komutu ile set edilebilir.

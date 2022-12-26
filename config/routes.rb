@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard', to: 'customer#index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -9,9 +10,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  #rooms routes
-  root "admin#index"
+  root "customer#index"
+  get 'admin', to: 'admin#index', as: 'admin-dashboard'
 
+   #rooms routes
   resources :rooms
 
   #service routes
