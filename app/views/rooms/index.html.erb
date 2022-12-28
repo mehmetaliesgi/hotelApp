@@ -26,13 +26,14 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Number</th>
+                                            <th>No</th>
                                             <th>Capacity</th>
-                                            <th>Price</th>
-                                            <th>Description</th>
+                                            <!-- <th>Bed Count</th> -->
+                                            <th>Fiyat</th>
+                                            <!-- <th>Açıklama</th> -->
                                             <th>Photos</th>
-                                            <th>Status</th>
-                                            <th>Services</th>
+                                            <th>Durum</th>
+                                            <th>Servis</th>
                                             <th colspan="2">Actions</th>
                                         </tr>
                                     </thead>
@@ -43,8 +44,9 @@
                                             <tr>
                                                 <td><%= room.number %></td>
                                                 <td><%= room.capacity %></td>
+                                                <!-- <td><%= room.bed_count %></td> -->
                                                 <td><%= room.price %></td>
-                                                <td><%= short_descripton(room.description)%></td>
+                                                <!--<td><%= short_descripton(room.description)%></td> -->
                                                 <td>                                           
                                                     <% room.photos.each do |photo| %>
                                                         <%= link_to image_tag(room.photo_as_thumbnail(photo)), photo %>

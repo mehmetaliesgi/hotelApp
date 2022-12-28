@@ -8,6 +8,10 @@
       <%= form.text_field :price, placeholder: '599', class: "form-control" %> <br>
       <%= form.label "Oda Açıklaması", class: "form-check-label" %>
       <%= form.text_field :description, placeholder: 'Bu oda 2 kişiliktir. Televizyon ....', class: "form-control" %> <br>
+      <%= form.label "Oda Boyutu", class: "form-check-label" %>
+      <%= form.number_field :room_size, placeholder: '25', class: "form-control" %> <br>
+      <%= form.label "Odadaki Yatak Sayısı", class: "form-check-label" %>
+      <%= form.number_field :bed_count, placeholder: '2', class: "form-control" %> <br>
       <%= form.label "Oda Durumu", class: "form-check-label" %> <br>
       <%= form.select :status, options_for_select([['Oda Boş', 'Müsait'], ['Oda Dolu', 'Bakımda']]) %>
       <br><br>
