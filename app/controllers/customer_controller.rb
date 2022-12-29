@@ -1,7 +1,7 @@
 class CustomerController < ApplicationController
   layout 'customer'
   def index
-
+    @rooms = Room.all
   end
 
   def rooms
@@ -17,6 +17,3 @@ end
 
 private
 
-def room_params
-  params.require(:room).permit(:number, :capacity, :price, :description, :status, photos: [], service_ids: [])
-end
