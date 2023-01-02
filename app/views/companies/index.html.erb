@@ -1,0 +1,77 @@
+<div class="container">
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Companies</h1>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                          <div class="row container">
+                            <div class="col-md-6" style="margin: auto;">
+                                <h6 class="m-0 font-weight-bold text-primary">All Of Companies</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <%= button_to "Ekle", new_company_path, method: :get, class: "btn btn-primary float-right" %>                                
+                            </div>  
+                          </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Capacity</th>
+                                            <!-- <th>Bed Count</th> -->
+                                            <th>Fiyat</th>
+                                            <!-- <th>Açıklama</th> -->
+                                            <th>Photos</th>
+                                            <th>Durum</th>
+                                            <th>Servis</th>
+                                            <th colspan="2">Actions</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    
+                                        <% @companies.each do |company| %>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <!-- <td><%= room.bed_count %></td> -->
+                                                <td></td>
+                                                <!--<td><%= short_descripton(room.description)%></td> -->
+                                                <td></td>
+            
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <%= button_to "Düzenle", edit_company_path(room.id), method: :get, class: "btn btn-info float-right" %> 
+                                                </td>
+                                                <td>
+                                                    <%= button_to "Sil", company_path(company.id), method: :delete, class: "btn btn-danger float-right" %>
+                                                </td>
+                                            </tr>
+                                        <% end %>
+                                            
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+    </div>
+</div>

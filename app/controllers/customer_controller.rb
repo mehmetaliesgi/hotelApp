@@ -12,6 +12,10 @@ class CustomerController < ApplicationController
     @room = Room.find(params[:id])
   end
 
+  def contact
+    @room = Room.all
+  end
+
 end
 
 

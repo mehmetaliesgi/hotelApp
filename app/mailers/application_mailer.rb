@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "info@mehmetaliesgi.tk"
+  default from: ENV['MAILER_FROM']
   layout "mailer"
 end

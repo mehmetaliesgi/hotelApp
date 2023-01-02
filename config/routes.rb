@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'customer#index'
   get 'our_rooms', to: 'customer#rooms'
   get 'room/:id', to: 'customer#show', as: 'single_room'
+  get 'contact', to: 'customer#contact'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -14,7 +15,10 @@ Rails.application.routes.draw do
   # resources :customer
 
   root "customer#index"
+
   get 'admin', to: 'admin#index', as: 'admin-dashboard'
+  
+  resources :companies
 
    #rooms routes
   resources :rooms

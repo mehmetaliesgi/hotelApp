@@ -13,7 +13,7 @@
 			  <li class="nav-item"><%= link_to 'Our Rooms', our_rooms_path, method: :get, class: 'nav-link' %></li>
 	          <li class="nav-item"><a href="#" class="nav-link">Restaurant</a></li>
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item"><%= link_to 'Contact', contact_path, class: 'nav-link' %></li>
 			  <% if current_user %>
 			  	<li class="nav-item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn nav-link', role: 'button' %></li>
 			  <% else %>

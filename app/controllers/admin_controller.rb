@@ -6,4 +6,8 @@ class AdminController < ApplicationController
     @rooms = Room.all
   end
 
+  def contact
+    
+  end
+
 end
