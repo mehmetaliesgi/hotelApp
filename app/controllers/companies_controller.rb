@@ -11,7 +11,7 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @contact = Company.new(contact_params)
+    @contact = Company.new(company_params)
     if @contact.save
       redirect_to admin_dashboard_path
     else

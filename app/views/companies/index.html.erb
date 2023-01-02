@@ -26,14 +26,10 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Capacity</th>
-                                            <!-- <th>Bed Count</th> -->
-                                            <th>Fiyat</th>
-                                            <!-- <th>Açıklama</th> -->
-                                            <th>Photos</th>
-                                            <th>Durum</th>
-                                            <th>Servis</th>
+                                            <th>Adres</th>
+                                            <th>Telefon</th>
+                                            <th>Email</th>
+                                            <th>Web Site</th>
                                             <th colspan="2">Actions</th>
                                         </tr>
                                     </thead>
@@ -42,17 +38,12 @@
                                     
                                         <% @companies.each do |company| %>
                                             <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <!-- <td><%= room.bed_count %></td> -->
-                                                <td></td>
-                                                <!--<td><%= short_descripton(room.description)%></td> -->
-                                                <td></td>
-            
-                                                <td></td>
-                                                <td></td>
+                                                <td><%= short_address(company.address) %></td>
+                                                <td><%= company.phone %></td>
+                                                <td><%= company.email %></td>
+                                                <td><%= company.website %></td>
                                                 <td>
-                                                    <%= button_to "Düzenle", edit_company_path(room.id), method: :get, class: "btn btn-info float-right" %> 
+                                                    <%= button_to "Düzenle", edit_company_path(company.id), method: :get, class: "btn btn-info float-right" %> 
                                                 </td>
                                                 <td>
                                                     <%= button_to "Sil", company_path(company.id), method: :delete, class: "btn btn-danger float-right" %>
