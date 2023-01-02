@@ -20,28 +20,30 @@
                             </div>  
                           </div>
                         </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <%= form_for(@contact, html: {'data-turbo' => "false"}) do |form| %>
+                                    <div class="container">
+                                    <%= form.label "Otel Adresi", class: "form-check-label" %>
+                                    <%= form.text_field :address, placeholder: 'Otel Adresiniz', class: "form-control" %> <br>
+                                    <%= form.label "Otel Telefon Numarası", class: "form-check-label" %>
+                                    <%= form.phone_field :phone, placeholder: 'Otel Telefon', class: "form-control" %> <br>
+                                    <%= form.label "Otel E-Posta", class: "form-check-label" %>
+                                    <%= form.text_field :address, placeholder: 'gunesler_otel@example.com', class: "form-control" %> <br>
+                                    <%= form.label "Otel Web Adresi", class: "form-check-label" %>
+                                    <%= form.text_field :website, placeholder: 'www.guneslerotel.example.com', class: "form-control" %> <br>
+                                    <%= form.label "Otel Konum-X", class: "form-check-label" %>
+                                    <%= form.text_field :location_x, placeholder: '41.2784187', class: "form-control" %> <br>
+                                    <%= form.label "Otel Konum-Y", class: "form-check-label" %>
+                                    <%= form.text_field :location_y, placeholder: '27.9964641', class: "form-control" %> <br><br>
+                                    
+                                    <%= form.submit "Kaydet", class:"btn btn-primary" %>
 
-                        <%= form_for(@contact, html: {'data-turbo' => "false"}) do |form| %>
-                            <div class="container">
-                            <%= form.label "Otel Adresi", class: "form-check-label" %>
-                            <%= form.text_field :address, placeholder: 'Otel Adresiniz', class: "form-control" %> <br>
-                            <%= form.label "Otel Telefon Numarası", class: "form-check-label" %>
-                            <%= form.phone_field :phone, placeholder: 'Otel Telefon', class: "form-control" %> <br>
-                            <%= form.label "Otel E-Posta", class: "form-check-label" %>
-                            <%= form.text_field :address, placeholder: 'gunesler_otel@example.com', class: "form-control" %> <br>
-                            <%= form.label "Otel Web Adresi", class: "form-check-label" %>
-                            <%= form.text_field :website, placeholder: 'www.guneslerotel.example.com', class: "form-control" %> <br>
-                            <%= form.label "Otel Konum-X", class: "form-check-label" %>
-                            <%= form.text_field :location_x, placeholder: '41.2784187', class: "form-control" %> <br>
-                            <%= form.label "Otel Konum-Y", class: "form-check-label" %>
-                            <%= form.text_field :location_y, placeholder: '27.9964641', class: "form-control" %> <br><br>
-                            
-                            <%= form.submit "Kaydet", class:"btn btn-primary" %>
-
+                                    </div>
+                                <% end %>
                             </div>
-                        <% end %>
-
-                         </div>
+                        
+                        </div>
             <!-- /.container-fluid -->
 
         </div>
